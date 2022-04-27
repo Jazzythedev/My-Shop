@@ -1,4 +1,4 @@
-//this is all now seeding/sample data to add to db//
+
 
 const products = [
     {
@@ -75,4 +75,4 @@ const products = [
     },
   ]
   
-  export default products                         /* cheange common js syntax to emca cyntax*/
+  export default products                       

@@ -3,7 +3,7 @@ main {
 }
 
 h3 {
-    padding:  1rem 0;             /*      for product component */
+    padding:  1rem 0;           
 }
 
 h1 {
@@ -16,7 +16,7 @@ h1 {
     padding: 0.5rem 0;
   }
 
-.rating span {                      /*      for product component */
+.rating span {                 
     margin: .1rem;                    
 }
 

@@ -1,12 +1,12 @@
 import React from 'react'
-import { Alert } from 'react-bootstrap'     /* Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages. */
+import { Alert } from 'react-bootstrap'     
 
 const Message = ({ variant, children }) => {
-  return <Alert variant={variant}>{children}</Alert>   /* in react, 'alert' is a component that displays a short, important message in a way that attracts the user's attention without interrupting the user's task */
+  return <Alert variant={variant}>{children}</Alert>   
 }
 
 Message.defaultProps = {
-  variant: 'info',                  /* info variant refers to one of the styling options. */
+  variant: 'info',                 
 }
 
 export default Message  

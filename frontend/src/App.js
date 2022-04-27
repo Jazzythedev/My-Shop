@@ -17,22 +17,22 @@ import OrderScreen from './screens/OrderScreen.js'
 const App = () => {
   return (
     <>
-        <Router>             {/*    Wrap the whole thing to make everything routable */}
+        <Router>           
           <Header />
             <main className='py-4'>
             <Container>
-              <Routes>                                                           {/*    Must wrap all individual routes in Routes */}
-                <Route path='/' element={ <HomeScreen /> } exact />                  {/*   when the path is / exactly at end of url then show homescreem component   */}
-                <Route path='/product/:id' element={ <ProductScreen /> } />        {/* use colon to read off parameter in js file */}
+              <Routes>                                                          
+                <Route path='/' element={ <HomeScreen /> } exact />                 
+                <Route path='/product/:id' element={ <ProductScreen /> } />        
                 <Route path='/order/:id' element={ <OrderScreen /> } />
                 <Route path='/profile' element={<ProfileScreen />} />
                 <Route path='/shipping' element={<ShippingScreen />} />
                 <Route path='/payment' element={<PaymentScreen />} />
                 <Route path='/placeorder' element={<PlaceOrderScreen />} />
                 <Route path='/register' element={<RegisterScreen />} />
-                <Route path='/cart/:id' element= { <CartScreen /> } />                 {/* route to add an item to cartscreen. This route includes the items ID*/}
-                <Route path='/cart' element= { <CartScreen /> } />                    {/*  This route shows all the items in the cart*/}
-                <Route path='/login' element= { <LoginScreen /> } />     {/* dont say 'exact' like homescreen route since there will be ? ...... queries to add to the route */}
+                <Route path='/cart/:id' element= { <CartScreen /> } />                 
+                <Route path='/cart' element= { <CartScreen /> } />                    
+                <Route path='/login' element= { <LoginScreen /> } />     
               </Routes>
             </Container>                                                          
             </main>

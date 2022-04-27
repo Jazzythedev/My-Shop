@@ -21,13 +21,13 @@ localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems))    
 
     }
 
-export const removeFromCart = (id) => (dispatch, getState) => {                             /* When removing an item from the cart, remove from redux store. look in cartReducers to see what removing an item does. */
+export const removeFromCart = (id) => (dispatch, getState) => {                             
     dispatch({
         type: CART_REMOVE_ITEM,
-        payload: id                                                                                 /* the ID is the identifying parameter showing waht is not going to be copied over, hence deleted. */
+        payload: id                                                                              
     })
 
-    localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems))                                    /* Once you have deleted from redux, you can add the updated array to local storage to show updated cart after removing what you didnt want. THIS IS HOW YOU ADD INFO INTO YOUR LOCAL STORAGE. keeps data alive as longs as browser is still open.  include key that was made in store.js "cartItems'. call the getState function to go to redux and grab existing cart for you. .cart is the friendly name for the cartreducer. cartItems is needed also bec it has the latest item that was added, we want all of it. convert all this to a string as local storage stores in strings.  use the json lib which has a stringhfy that converts a json object into a string. this will now be stored in local storage.*/
+    localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems))                                    
 
 }
 

@@ -1,13 +1,13 @@
-// the purpose of this component is to show a loading spinner when data is being retrieved from the DB or redux store. */
+
 
 
 import React from 'react'
-import { Spinner } from 'react-bootstrap'   /* Spinners can be used to show the loading state in your projects */
+import { Spinner } from 'react-bootstrap'   
 
-const Loader = () => {              /* store this whole function in a variable called Loader, to be called when pages are loading and data is being retrieved.  */
+const Loader = () => {              
     return (
       <Spinner
-        animation='border'  /* border refers to the animation style of the spinner. Simple HTML and CSS is used to display it */
+        animation='border' 
         role='status'
         style={{
           width: '100px',

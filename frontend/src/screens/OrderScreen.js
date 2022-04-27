@@ -9,16 +9,16 @@ import Loader from '../components/Loader'
 import { getOrderDetails, payOrder  } from '../actions/orderActions'
 import { ORDER_PAY_RESET } from '../constants/orderConstants'
 
-// module 22
+
 
 const OrderScreen = () => {
   const params = useParams();
   const orderId = params.id
 
   const dispatch = useDispatch()
-   //is paypal ready
+ 
    const [sdkReady, setSdkReady] = useState(false)
-      //checking order details in redux store, if it has order loading and error then display 
+   
   const orderDetails = useSelector((state) => state.orderDetails)
   const { order, loading, error } = orderDetails
 

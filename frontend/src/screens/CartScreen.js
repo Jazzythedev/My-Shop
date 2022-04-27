@@ -2,46 +2,42 @@
 
 
 import React, { useEffect } from 'react'
-import { Link, useNavigate, useParams, useLocation } from 'react-router-dom'                /* useLocation will accept query parameters that were stated in the addToCartHandler */
-import { useDispatch, useSelector } from 'react-redux'                  /* useSelector is a hook to fetch data from the redux store */
+import { Link, useNavigate, useParams, useLocation } from 'react-router-dom'               
+import { useDispatch, useSelector } from 'react-redux'               
 import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap'
 import Message from '../components/Message'
 import { addToCart, removeFromCart } from '../actions/cartActions'
 
 const CartScreen = () => {
-  const location = useLocation()              /* store the results of the following functions in created variables */
+  const location = useLocation()              
   const dispatch = useDispatch()
   const params = useParams()
   const navigate = useNavigate() 
   const productId = params.id
 
-  /* location can 'split' the search if there are multiple parameters in the addToCart query parameters, it creates an array. if it reads qty=3=2=5 the the the qty is key and and 3,2 and 5 are all separate line item values. we ask for the [1] indices value in the array bec the [0] value is qty. Wrap this in a number function as that convert it to a number, this is referred to as typecasting*/
+  
 
 const qty = location.search ? Number(location.search.split('=')[1]): 1      
  
 
-/* if in the route there is a product id, dispatch the addtocart function.*/
-/* dispatch addtocart function call. pass product id and qty.  */
+
 useEffect(() => {                                                         
   if (productId){                                                         
     dispatch(addToCart(productId, qty))                              
   }
-},[dispatch, productId, qty])                /* when there is these changes, have useeffect to fire again */
+},[dispatch, productId, qty])               
 
 
- /* useSelector to fetch data from the redux store. selector gets the whole state back but we just want the cart. remember that redux contains product list, details and cart info.  */
-/* deconstruct  the data that is stored in the cart variable and get cart items from cart */
-
+ 
 const cart = useSelector((state) => state.cart)        
 const {cartItems} = cart                              
 
-/* to remove a cart item, pass the id so the reducer everything else but that specific product matching that id. This is triggered when a user clicks the trash icon */
 
 const removeFromCartHandler = (id) => {          
     dispatch(removeFromCart(id))
 }
 
-const checkoutHandler = () => {                       /* this function is fired when you are ready to make purchase after items are added to cart. it handles navigating to login and then shipping */
+const checkoutHandler = () => {                      
 navigate('/login?redirect=/shipping')             
 
 }
